@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La storia di Caligola</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="header">
+
+            <p class="subtitle">UNA PICCOLA AVVENTURA NELLA STORIA</p>
+
+            <h1>Alla scoperta di Caligola</h1>
+
+            <p class="description">
+                Sei pronto a conoscere un imperatore molto particolare?
+            </p>
+
+        </header>
+
+
+        <section class="comic">
+
+            <div class="speech-container">
+
+                <div class="speech-bubble">
+
+                    <p id="dialogue">
+                        Ciao! Io sono Caligola!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="characters">
+
+                <img
+                    id="caligola"
+                    src="immagini/caligola.PNG"
+                    alt="Caligola"
+                >
+
+                <img
+                    id="incitatus"
+                    src="immagini/incitatus.PNG"
+                    alt="Incitato, il cavallo"
+                >
+
+            </div>
+
+        </section>
+
+
+        <section class="controls">
+
+            <button id="backButton" onclick="previousScene()">
+                ← INDIETRO
+            </button>
+
+            <div class="progress-container">
+
+                <span id="progress">1 / 8</span>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+            </div>
+
+            <button id="nextButton" onclick="nextScene()">
+                AVANTI →
+            </button>
+
+        </section>
+
+
+        <footer>
+            <p>Una storia tutta da scoprire ♡</p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
