@@ -13,11 +13,10 @@ body {
 }
 .comic {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
 }
-/* TITOLO */
 header {
     margin-bottom: 12px;
 }
@@ -64,30 +63,25 @@ h1 {
 }
 /* PERSONAGGI */
 .characters {
-    height: 500px;
+    height: clamp(210px, 42vh, 350px);
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 0;
     position: relative;
     overflow: visible;
-    transform: translateY(35px);
 }
 #caligola {
-    height: 410px;
-    max-width: 68%;
+    height: 95%;
+    max-width: 52%;
     object-fit: contain;
     transition: opacity 0.3s ease;
-    position: relative;
-    top: 25px;
 }
 .horse {
     display: none;
-    height: 390px;
-    max-width: 68%;
+    height: 88%;
+    max-width: 52%;
     object-fit: contain;
-    position: relative;
-    top: 25px;
     animation: enterHorse 0.7s ease;
 }
 @keyframes enterHorse {
@@ -171,33 +165,78 @@ footer {
     color: #947d68;
     font-size: 12px;
 }
-/* IPAD E SCHERMI LARGHI */
-@media (min-width: 601px) {
+/* IPAD IN ORIZZONTALE E SCHERMI LARGHI */
+@media (min-width: 601px) and (orientation: landscape) {
     body {
-        padding: 10px 24px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+        padding: 8px 24px;
+    }
+    .comic {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     header {
-        margin-bottom: 5px;
+        flex: 0 0 auto;
+        margin-bottom: 4px;
     }
     h1 {
-        font-size: 34px;
+        font-size: clamp(25px, 3.2vw, 36px);
     }
     .subtitle {
         margin-bottom: 4px;
     }
+    .comic-card {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 4px 5px;
+    }
+    .progress-area {
+        flex: 0 0 auto;
+        margin-bottom: 3px;
+        gap: 5px;
+    }
     .characters {
-        height: 500px;
+        flex: 1 1 0;
+        min-height: 0;
+        height: auto;
+        align-items: flex-end;
+        overflow: visible;
+    }
+    #caligola {
+        height: 100%;
+        max-height: 100%;
+        max-width: 68%;
+    }
+    .horse {
+        height: 95%;
+        max-height: 100%;
+        max-width: 68%;
     }
     .speech-bubble {
-        min-height: 85px;
-        padding: 15px 25px;
-        margin: 10px auto 12px;
+        flex: 0 0 auto;
+        width: 85%;
+        min-height: 75px;
+        padding: 10px 24px;
+        margin: 5px auto 8px;
     }
     #dialogue {
-        font-size: 19px;
+        font-size: clamp(17px, 1.8vw, 21px);
+    }
+    .buttons {
+        flex: 0 0 auto;
+    }
+    button {
+        padding: 12px 22px;
     }
     footer {
-        margin-top: 6px;
+        flex: 0 0 auto;
+        margin-top: 3px;
     }
 }
 /* TELEFONI */
@@ -215,24 +254,18 @@ footer {
         height: 32vh;
         min-height: 180px;
         max-height: 260px;
-        transform: none;
         overflow: hidden;
     }
     #caligola {
-        height: 95%;
         max-width: 65%;
-        top: 0;
     }
     .horse {
-        height: 88%;
         max-width: 60%;
-        top: 0;
     }
     .speech-bubble {
         min-height: 100px;
         padding: 18px 16px;
         border-radius: 25px;
-        margin: 14px auto 18px;
     }
     #dialogue {
         font-size: 18px;
@@ -240,83 +273,5 @@ footer {
     button {
         padding: 13px 15px;
         font-size: 12px;
-    }
-}
-/* IPAD: TUTTO NELLO SCHERMO, SENZA SCROLL */
-@media (min-width: 601px) {
-    body {
-        height: 100vh;
-        height: 100dvh;
-        min-height: 0;
-        overflow: hidden;
-        padding: 8px 24px;
-    }
-
-    .comic {
-        height: 100%;
-        max-width: 1100px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    header {
-        flex-shrink: 0;
-        margin-bottom: 4px;
-    }
-
-    .comic-card {
-        flex: 1;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 4px 5px;
-    }
-
-    .progress-area {
-        flex-shrink: 0;
-        margin-bottom: 0;
-    }
-
-    .characters {
-        flex: 1;
-        min-height: 0;
-        height: auto;
-        transform: none;
-        overflow: visible;
-        align-items: flex-end;
-    }
-
-    #caligola {
-        height: 100%;
-        max-height: 100%;
-        max-width: 68%;
-        top: 0;
-    }
-
-    .horse {
-        height: 95%;
-        max-height: 100%;
-        max-width: 68%;
-        top: 0;
-    }
-
-    .speech-bubble {
-        flex-shrink: 0;
-        margin: 8px auto 10px;
-        min-height: 75px;
-        padding: 12px 24px;
-    }
-
-    #dialogue {
-        font-size: 19px;
-    }
-
-    .buttons {
-        flex-shrink: 0;
-    }
-
-    footer {
-        flex-shrink: 0;
-        margin-top: 5px;
     }
 }
