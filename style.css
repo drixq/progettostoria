@@ -3,223 +3,203 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     min-height: 100vh;
     background-color: #f8f0df;
     font-family: Georgia, serif;
     color: #3b2923;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 30px 20px;
 }
-
 .comic {
     width: 100%;
-    max-width: 650px;
+    max-width: 950px;
+    margin: 0 auto;
     text-align: center;
 }
-
 header {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
-
 .subtitle {
     color: #941919;
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-
 h1 {
     color: #941919;
-    font-size: 34px;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.15;
 }
-
+/* AREA PRINCIPALE */
 .comic-card {
-    background-color: #fffaf0;
-    border: 2px solid #e6d6b9;
-    border-radius: 25px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(80, 50, 30, 0.10);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 15px 20px;
+    box-shadow: none;
 }
-
+/* PROGRESSO */
 .progress-area {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 9px;
+    margin-bottom: 10px;
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #80634f;
 }
-
 .progress-bar {
     height: 8px;
     width: 100%;
-    background-color: #eadfce;
+    background-color: #e8dcc9;
     border-radius: 20px;
     overflow: hidden;
 }
-
 #progressFill {
     height: 100%;
     width: 6.25%;
     background-color: #941919;
     border-radius: 20px;
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
 }
-
+/* PERSONAGGI */
 .characters {
-    height: 310px;
+    height: 430px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    gap: 0;
     position: relative;
-    gap: 10px;
     overflow: hidden;
 }
-
 #caligola {
-    max-height: 290px;
-    max-width: 75%;
+    height: 400px;
+    max-width: 55%;
     object-fit: contain;
+    transition: opacity 0.3s ease;
 }
-
 .horse {
     display: none;
-    max-height: 260px;
-    max-width: 55%;
-    width: auto;
+    height: 340px;
+    max-width: 50%;
     object-fit: contain;
-    animation: enterHorse 0.6s ease;
+    animation: enterHorse 0.7s ease;
 }
 @keyframes enterHorse {
     from {
         opacity: 0;
-        transform: translateX(80px);
+        transform: translateX(100px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
-
+/* NUVOLETTA */
 .speech-bubble {
     position: relative;
-    background-color: white;
+    background-color: #fffdf7;
     border: 2px solid #941919;
-    border-radius: 20px;
-    padding: 22px;
-    margin: 20px 5px 25px;
-    min-height: 110px;
+    border-radius: 35px;
+    padding: 30px 35px;
+    margin: 15px auto 25px;
+    min-height: 125px;
+    max-width: 850px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .speech-bubble::before {
     content: "";
     position: absolute;
     top: -13px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    width: 22px;
-    height: 22px;
-    background-color: white;
+    width: 23px;
+    height: 23px;
+    background-color: #fffdf7;
     border-left: 2px solid #941919;
     border-top: 2px solid #941919;
 }
-
 #dialogue {
-    font-size: 20px;
+    font-size: clamp(19px, 2.5vw, 25px);
     line-height: 1.5;
     position: relative;
     z-index: 1;
 }
-
+/* PULSANTI */
 .buttons {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
+    gap: 15px;
+    max-width: 850px;
+    margin: 0 auto;
 }
-
 button {
     border: none;
-    border-radius: 30px;
-    padding: 13px 20px;
+    border-radius: 35px;
+    padding: 16px 25px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
 }
-
 #nextButton {
     background-color: #941919;
     color: white;
     flex: 1;
 }
-
 #backButton {
-    background-color: #e9dfd0;
+    background-color: #eadfce;
     color: #513a2c;
 }
-
 button:hover:not(:disabled) {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
-
 button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
-
+/* PIE' DI PAGINA */
 footer {
     margin-top: 20px;
     color: #947d68;
     font-size: 13px;
 }
-
-@media (max-width: 480px) {
-
+/* TELEFONI E TABLET */
+@media (max-width: 600px) {
     body {
-        padding: 12px;
+        padding: 20px 12px;
     }
-
-    h1 {
-        font-size: 28px;
-    }
-
     .comic-card {
-        padding: 14px;
+        padding: 12px 5px;
     }
-
+    h1 {
+        font-size: 30px;
+    }
     .characters {
-        height: 260px;
+        height: 320px;
     }
-
     #caligola {
-        max-height: 245px;
+        height: 300px;
+        max-width: 65%;
     }
-
-   .horse {
-    max-height: 210px;
-    max-width: 55%;
-}
-
-    #dialogue {
-        font-size: 17px;
+    .horse {
+        height: 270px;
+        max-width: 60%;
     }
-
     .speech-bubble {
-        padding: 18px;
+        min-height: 115px;
+        padding: 23px 20px;
+        border-radius: 28px;
+        margin-top: 15px;
     }
-
+    #dialogue {
+        font-size: 19px;
+    }
     button {
-        padding: 12px 14px;
+        padding: 14px 16px;
         font-size: 12px;
     }
 }
