@@ -5,46 +5,45 @@
 }
 body {
     min-height: 100vh;
-    background-color: #f8f0df;
+    min-height: 100dvh;
+    background: #f8f0df;
     font-family: Georgia, serif;
     color: #3b2923;
-    padding: 30px 20px;
+    padding: 18px 24px;
 }
 .comic {
     width: 100%;
-    max-width: 950px;
+    max-width: 1050px;
     margin: 0 auto;
     text-align: center;
 }
 header {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 .subtitle {
     color: #941919;
     font-family: Arial, sans-serif;
     font-size: 13px;
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 h1 {
     color: #941919;
-    font-size: clamp(30px, 5vw, 48px);
-    line-height: 1.15;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.12;
 }
-/* AREA PRINCIPALE */
+/* PROGRESSO */
 .comic-card {
     background: transparent;
     border: none;
-    border-radius: 0;
-    padding: 15px 20px;
+    padding: 10px 5px;
     box-shadow: none;
 }
-/* PROGRESSO */
 .progress-area {
     display: flex;
     flex-direction: column;
-    gap: 9px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #80634f;
@@ -52,20 +51,19 @@ h1 {
 .progress-bar {
     height: 8px;
     width: 100%;
-    background-color: #e8dcc9;
+    background: #e8dcc9;
     border-radius: 20px;
     overflow: hidden;
 }
 #progressFill {
     height: 100%;
-    width: 6.25%;
-    background-color: #941919;
+    background: #941919;
     border-radius: 20px;
     transition: width 0.4s ease;
 }
 /* PERSONAGGI */
 .characters {
-    height: 430px;
+    height: clamp(210px, 42vh, 350px);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -74,22 +72,22 @@ h1 {
     overflow: hidden;
 }
 #caligola {
-    height: 400px;
-    max-width: 55%;
+    height: 95%;
+    max-width: 52%;
     object-fit: contain;
     transition: opacity 0.3s ease;
 }
 .horse {
     display: none;
-    height: 340px;
-    max-width: 50%;
+    height: 88%;
+    max-width: 52%;
     object-fit: contain;
     animation: enterHorse 0.7s ease;
 }
 @keyframes enterHorse {
     from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(70px);
     }
     to {
         opacity: 1;
@@ -99,12 +97,12 @@ h1 {
 /* NUVOLETTA */
 .speech-bubble {
     position: relative;
-    background-color: #fffdf7;
+    background: #fffdf7;
     border: 2px solid #941919;
-    border-radius: 35px;
-    padding: 30px 35px;
-    margin: 15px auto 25px;
-    min-height: 125px;
+    border-radius: 30px;
+    padding: 20px 28px;
+    margin: 14px auto 18px;
+    min-height: 95px;
     max-width: 850px;
     display: flex;
     justify-content: center;
@@ -113,18 +111,18 @@ h1 {
 .speech-bubble::before {
     content: "";
     position: absolute;
-    top: -13px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    width: 23px;
-    height: 23px;
-    background-color: #fffdf7;
+    width: 20px;
+    height: 20px;
+    background: #fffdf7;
     border-left: 2px solid #941919;
     border-top: 2px solid #941919;
 }
 #dialogue {
-    font-size: clamp(19px, 2.5vw, 25px);
-    line-height: 1.5;
+    font-size: clamp(17px, 2.1vw, 23px);
+    line-height: 1.4;
     position: relative;
     z-index: 1;
 }
@@ -132,26 +130,26 @@ h1 {
 .buttons {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 14px;
     max-width: 850px;
     margin: 0 auto;
 }
 button {
     border: none;
     border-radius: 35px;
-    padding: 16px 25px;
-    font-size: 14px;
+    padding: 14px 22px;
+    font-size: 13px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s;
 }
 #nextButton {
-    background-color: #941919;
+    background: #941919;
     color: white;
     flex: 1;
 }
 #backButton {
-    background-color: #eadfce;
+    background: #eadfce;
     color: #513a2c;
 }
 button:hover:not(:disabled) {
@@ -163,43 +161,73 @@ button:disabled {
 }
 /* PIE' DI PAGINA */
 footer {
-    margin-top: 20px;
+    margin-top: 12px;
     color: #947d68;
-    font-size: 13px;
+    font-size: 12px;
 }
-/* TELEFONI E TABLET */
-@media (max-width: 600px) {
+/* SCHERMI BASSI: IPAD IN ORIZZONTALE */
+@media (min-width: 601px) and (max-height: 850px) {
     body {
-        padding: 20px 12px;
+        padding: 10px 24px;
     }
-    .comic-card {
-        padding: 12px 5px;
+    header {
+        margin-bottom: 5px;
     }
     h1 {
-        font-size: 30px;
+        font-size: 34px;
+    }
+    .subtitle {
+        margin-bottom: 4px;
     }
     .characters {
-        height: 320px;
-    }
-    #caligola {
-        height: 300px;
-        max-width: 65%;
-    }
-    .horse {
-        height: 270px;
-        max-width: 60%;
+        height: 32vh;
+        min-height: 170px;
+        max-height: 270px;
     }
     .speech-bubble {
-        min-height: 115px;
-        padding: 23px 20px;
-        border-radius: 28px;
-        margin-top: 15px;
+        min-height: 85px;
+        padding: 15px 25px;
+        margin: 10px auto 12px;
     }
     #dialogue {
         font-size: 19px;
     }
+    footer {
+        margin-top: 6px;
+    }
+}
+/* TELEFONI */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 12px;
+    }
+    header {
+        margin-bottom: 10px;
+    }
+    h1 {
+        font-size: 29px;
+    }
+    .characters {
+        height: 32vh;
+        min-height: 180px;
+        max-height: 260px;
+    }
+    #caligola {
+        max-width: 65%;
+    }
+    .horse {
+        max-width: 60%;
+    }
+    .speech-bubble {
+        min-height: 100px;
+        padding: 18px 16px;
+        border-radius: 25px;
+    }
+    #dialogue {
+        font-size: 18px;
+    }
     button {
-        padding: 14px 16px;
+        padding: 13px 15px;
         font-size: 12px;
     }
 }
