@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>La storia di Caligola</title>
-
+    <title>Alla scoperta di caligola</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <main class="page">
+    <main class="comic">
 
-        <header class="header">
-
-            <p class="subtitle">UNA PICCOLA AVVENTURA NELLA STORIA</p>
-
-            <h1>Alla scoperta di Caligola</h1>
-
-            <p class="description">
-                Sei pronto a conoscere un imperatore molto particolare?
-            </p>
-
+        <header>
+            <p class="subtitle">una piccola avventura nella storia</p>
+            <h1>Sei pronto a conoscere un imperatore molto particolare?</h1>
         </header>
 
+        <section class="comic-card">
 
-        <section class="comic">
-
-            <div class="speech-container">
-
-                <div class="speech-bubble">
-
-                    <p id="dialogue">
-                        Ciao! Io sono Caligola!
-                    </p>
-
+            <div class="progress-area">
+                <span id="progress">1 / 16</span>
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
                 </div>
-
             </div>
-
 
             <div class="characters">
 
@@ -53,46 +37,35 @@
                 <img
                     id="incitatus"
                     src="immagini/incitatus.PNG"
-                    alt="Incitato, il cavallo"
+                    alt="Il cavallo Incitato"
+                    class="horse"
                 >
 
             </div>
 
-        </section>
+            <div class="speech-bubble">
+                <p id="dialogue"></p>
+            </div>
 
+            <div class="buttons">
 
-        <section class="controls">
+                <button id="backButton" disabled>
+                    ← INDIETRO
+                </button>
 
-            <button id="backButton" onclick="previousScene()">
-                ← INDIETRO
-            </button>
-
-            <div class="progress-container">
-
-                <span id="progress">1 / 8</span>
-
-                <div class="progress-bar">
-                    <div id="progressFill"></div>
-                </div>
+                <button id="nextButton">
+                    AVANTI →
+                </button>
 
             </div>
 
-            <button id="nextButton" onclick="nextScene()">
-                AVANTI →
-            </button>
-
         </section>
 
-
         <footer>
-            <p> progetto classe ribaltata</p>
+            <p> progetto storia classe ribaltata 🏛️</p>
         </footer>
 
     </main>
 
-
-    <script src="script.js"></script>
-
 </body>
-
 </html>
