@@ -231,3 +231,34 @@ footer {
         font-size: 12px;
     }
 }
+/* PERSONAGGI PIÙ GRANDI SU IPAD E SCHERMI LARGHI */
+@media (min-width: 601px) {
+    .characters {
+        height: clamp(330px, 45vh, 440px);
+        overflow: visible;
+    }
+    #caligola {
+        height: 112%;
+        max-width: 62%;
+    }
+    .horse {
+        height: 112%;
+        max-width: 68%;
+    }
+}
+/* PERSONAGGI PIÙ GRANDI SU TELEFONO */
+@media (max-width: 600px) {
+    .characters {
+        height: 34vh;
+        min-height: 230px;
+        max-height: 310px;
+    }
+    #caligola {
+        height: 108%;
+        max-width: 68%;
+    }
+    .horse {
+        height: 105%;
+        max-width: 65%;
+    }
+}
