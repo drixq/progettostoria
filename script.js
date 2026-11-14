@@ -65,7 +65,7 @@ const scenes = [
 
         character: "caligola parla.PNG",
 
-        horse: true
+        horse: true,
         horseImage: "incitatus felice.PNG"
     },
 
