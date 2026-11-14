@@ -90,12 +90,12 @@ h1 {
 
 .horse {
     display: none;
-    max-height: 190px;
-    max-width: 40%;
+    max-height: 260px;
+    max-width: 55%;
+    width: auto;
     object-fit: contain;
     animation: enterHorse 0.6s ease;
 }
-
 @keyframes enterHorse {
     from {
         opacity: 0;
@@ -205,9 +205,10 @@ footer {
         max-height: 245px;
     }
 
-    .horse {
-        max-height: 150px;
-    }
+   .horse {
+    max-height: 210px;
+    max-width: 55%;
+}
 
     #dialogue {
         font-size: 17px;
