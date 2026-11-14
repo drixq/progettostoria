@@ -1,464 +1,224 @@
-/* IMPOSTAZIONI GENERALI */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-
     min-height: 100vh;
-
-    background-color: #F5EBDD;
-
-    font-family: "Trebuchet MS", sans-serif;
-
-    color: #49372C;
-
+    background-color: #f8f0df;
+    font-family: Georgia, serif;
+    color: #3b2923;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     padding: 20px;
-
 }
 
-
-/* PAGINA PRINCIPALE */
-
-.page {
-
+.comic {
     width: 100%;
-
-    max-width: 1000px;
-
-    min-height: 650px;
-
-    background-color: #FFF9EF;
-
-    border-radius: 25px;
-
-    padding: 35px;
-
-    box-shadow: 0 10px 35px rgba(80, 50, 30, 0.10);
-
+    max-width: 650px;
+    text-align: center;
 }
 
-
-/* TITOLO */
-
-.header {
-
-    text-align: center;
-
-    margin-bottom: 35px;
-
+header {
+    margin-bottom: 25px;
 }
 
 .subtitle {
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
     color: #941919;
-
-    margin-bottom: 10px;
-
-    font-weight: bold;
-
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
 }
 
-.header h1 {
-
-    font-size: 35px;
-
-    color: #75452F;
-
-    margin-bottom: 12px;
-
+h1 {
+    color: #941919;
+    font-size: 34px;
 }
 
-.description {
-
-    font-size: 16px;
-
-    color: #897567;
-
+.comic-card {
+    background-color: #fffaf0;
+    border: 2px solid #e6d6b9;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(80, 50, 30, 0.10);
 }
 
-
-/* AREA DEL FUMETTO */
-
-.comic {
-
-    width: 100%;
-
-    min-height: 400px;
-
-    position: relative;
-
+.progress-area {
     display: flex;
-
     flex-direction: column;
-
-    align-items: center;
-
-}
-
-
-/* NUVOLA */
-
-.speech-container {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-.speech-bubble {
-
-    position: relative;
-
-    background: white;
-
-    border: 3px solid #49372C;
-
-    border-radius: 30px;
-
-    padding: 25px 35px;
-
-    width: 85%;
-
-    max-width: 600px;
-
-    min-height: 100px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    box-shadow: 4px 5px 0 rgba(73, 55, 44, 0.10);
-
-}
-
-.speech-bubble::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: -17px;
-
-    left: 50%;
-
-    width: 25px;
-
-    height: 25px;
-
-    background: white;
-
-    border-right: 3px solid #49372C;
-
-    border-bottom: 3px solid #49372C;
-
-    transform: translateX(-50%) rotate(45deg);
-
-}
-
-.speech-bubble p {
-
-    font-size: 22px;
-
-    line-height: 1.5;
-
-    color: #49372C;
-
-}
-
-
-/* PERSONAGGI */
-
-.characters {
-
-    width: 100%;
-
-    height: 280px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-end;
-
-    gap: 20px;
-
-    position: relative;
-
-    margin-top: 15px;
-
-    overflow: hidden;
-
-}
-
-.characters img {
-
-    max-height: 260px;
-
-    max-width: 45%;
-
-    object-fit: contain;
-
-    transition: opacity 0.4s ease;
-
-}
-
-
-/* CAVALLO NASCOSTO INIZIALMENTE */
-
-#incitatus {
-
-    display: none;
-
-}
-
-#incitatus.visible {
-
-    display: block;
-
-    animation: enterHorse 0.8s ease-out;
-
-}
-
-
-/* ENTRATA DEL CAVALLO */
-
-@keyframes enterHorse {
-
-    from {
-
-        transform: translateX(350px);
-
-        opacity: 0;
-
-    }
-
-    to {
-
-        transform: translateX(0);
-
-        opacity: 1;
-
-    }
-
-}
-
-
-/* PULSANTI */
-
-.controls {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: 30px;
-
-}
-
-button {
-
-    background-color: #941919;
-
-    color: white;
-
-    border: none;
-
-    padding: 14px 25px;
-
-    border-radius: 30px;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-
-}
-
-button:hover {
-
-    background-color: #6F1010;
-
-    transform: translateY(-3px);
-
-}
-
-button:disabled {
-
-    opacity: 0.35;
-
-    cursor: not-allowed;
-
-    transform: none;
-
-}
-
-
-/* AVANZAMENTO */
-
-.progress-container {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
     gap: 8px;
-
-    min-width: 80px;
-
-}
-
-#progress {
-
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
     font-size: 13px;
-
-    color: #897567;
-
+    color: #80634f;
 }
 
 .progress-bar {
-
-    width: 90px;
-
-    height: 6px;
-
-    background: #E9DCD0;
-
-    border-radius: 10px;
-
+    height: 8px;
+    width: 100%;
+    background-color: #eadfce;
+    border-radius: 20px;
     overflow: hidden;
-
 }
 
 #progressFill {
-
     height: 100%;
-
-    width: 12.5%;
-
-    background: #941919;
-
-    transition: width 0.4s;
-
+    width: 6.25%;
+    background-color: #941919;
+    border-radius: 20px;
+    transition: width 0.3s ease;
 }
 
+.characters {
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    gap: 10px;
+    overflow: hidden;
+}
 
-/* FOOTER */
+#caligola {
+    max-height: 290px;
+    max-width: 75%;
+    object-fit: contain;
+}
+
+.horse {
+    display: none;
+    max-height: 190px;
+    max-width: 40%;
+    object-fit: contain;
+    animation: enterHorse 0.6s ease;
+}
+
+@keyframes enterHorse {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.speech-bubble {
+    position: relative;
+    background-color: white;
+    border: 2px solid #941919;
+    border-radius: 20px;
+    padding: 22px;
+    margin: 20px 5px 25px;
+    min-height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speech-bubble::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-left: 2px solid #941919;
+    border-top: 2px solid #941919;
+}
+
+#dialogue {
+    font-size: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#nextButton {
+    background-color: #941919;
+    color: white;
+    flex: 1;
+}
+
+#backButton {
+    background-color: #e9dfd0;
+    color: #513a2c;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.04);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
 footer {
-
-    text-align: center;
-
-    margin-top: 35px;
-
-    color: #A18B7B;
-
+    margin-top: 20px;
+    color: #947d68;
     font-size: 13px;
-
 }
 
-
-/* VERSIONE SMARTPHONE */
-
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
     body {
-
-        padding: 10px;
-
+        padding: 12px;
     }
 
-    .page {
-
-        padding: 22px 15px;
-
-        min-height: 600px;
-
+    h1 {
+        font-size: 28px;
     }
 
-    .header h1 {
-
-        font-size: 26px;
-
-    }
-
-    .subtitle {
-
-        font-size: 10px;
-
-    }
-
-    .description {
-
-        font-size: 14px;
-
-    }
-
-    .speech-bubble {
-
-        width: 95%;
-
-        padding: 20px;
-
-    }
-
-    .speech-bubble p {
-
-        font-size: 18px;
-
+    .comic-card {
+        padding: 14px;
     }
 
     .characters {
-
-        height: 240px;
-
+        height: 260px;
     }
 
-    .characters img {
+    #caligola {
+        max-height: 245px;
+    }
 
-        max-height: 220px;
+    .horse {
+        max-height: 150px;
+    }
 
+    #dialogue {
+        font-size: 17px;
+    }
+
+    .speech-bubble {
+        padding: 18px;
     }
 
     button {
-
-        padding: 12px 15px;
-
+        padding: 12px 14px;
         font-size: 12px;
-
     }
-
 }
