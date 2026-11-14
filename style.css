@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+/* TITOLO */
 header {
     margin-bottom: 12px;
 }
@@ -63,25 +64,30 @@ h1 {
 }
 /* PERSONAGGI */
 .characters {
-    height: clamp(210px, 42vh, 350px);
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    transform: translateY(35px);
 }
 #caligola {
-    height: 95%;
-    max-width: 52%;
+    height: 410px;
+    max-width: 68%;
     object-fit: contain;
     transition: opacity 0.3s ease;
+    position: relative;
+    top: 25px;
 }
 .horse {
     display: none;
-    height: 88%;
-    max-width: 52%;
+    height: 390px;
+    max-width: 68%;
     object-fit: contain;
+    position: relative;
+    top: 25px;
     animation: enterHorse 0.7s ease;
 }
 @keyframes enterHorse {
@@ -165,8 +171,8 @@ footer {
     color: #947d68;
     font-size: 12px;
 }
-/* SCHERMI BASSI: IPAD IN ORIZZONTALE */
-@media (min-width: 601px) and (max-height: 850px) {
+/* IPAD E SCHERMI LARGHI */
+@media (min-width: 601px) {
     body {
         padding: 10px 24px;
     }
@@ -180,9 +186,7 @@ footer {
         margin-bottom: 4px;
     }
     .characters {
-        height: 32vh;
-        min-height: 170px;
-        max-height: 270px;
+        height: 500px;
     }
     .speech-bubble {
         min-height: 85px;
@@ -211,17 +215,24 @@ footer {
         height: 32vh;
         min-height: 180px;
         max-height: 260px;
+        transform: none;
+        overflow: hidden;
     }
     #caligola {
+        height: 95%;
         max-width: 65%;
+        top: 0;
     }
     .horse {
+        height: 88%;
         max-width: 60%;
+        top: 0;
     }
     .speech-bubble {
         min-height: 100px;
         padding: 18px 16px;
         border-radius: 25px;
+        margin: 14px auto 18px;
     }
     #dialogue {
         font-size: 18px;
@@ -230,43 +241,4 @@ footer {
         padding: 13px 15px;
         font-size: 12px;
     }
-}
-/* PERSONAGGI PIÙ GRANDI SU IPAD E SCHERMI LARGHI */
-@media (min-width: 601px) {
-    .characters {
-        height: clamp(330px, 45vh, 440px);
-        overflow: visible;
-    }
-    #caligola {
-        height: 112%;
-        max-width: 62%;
-    }
-    .horse {
-        height: 112%;
-        max-width: 68%;
-    }
-}
-/* PERSONAGGI PIÙ GRANDI SU TELEFONO */
-@media (min-width: 601px) {
-
-    .characters {
-        height: 430px !important;
-        align-items: flex-end;
-        overflow: visible;
-    }
-
-    #caligola {
-        height: 350px !important;
-        max-width: 62%;
-        position: relative;
-        top: 25px;
-    }
-
-    .horse {
-        height: 330px !important;
-        max-width: 62%;
-        position: relative;
-        top: 25px;
-    }
-
 }
