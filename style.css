@@ -248,18 +248,18 @@ footer {
 }
 /* PERSONAGGI PIÙ GRANDI SU TELEFONO */
 @media (min-width: 601px) {
-
     .characters {
-        height: 400px !important;
+        height: 370px;
+        align-items: flex-end;
     }
-
     #caligola {
-        height: 370px !important;
-        max-width: 65% !important;
+        height: 330px;
+        max-width: 62%;
+        transform: translateY(18px);
     }
-
     .horse {
-        height: 350px !important;
-        max-width: 65% !important;
+        height: 310px;
+        max-width: 62%;
+        transform: translateY(18px);
     }
 }
