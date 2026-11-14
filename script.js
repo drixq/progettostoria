@@ -57,6 +57,7 @@ const scenes = [
         character: "caligola.PNG",
 
         horse: true
+        
     },
 
     {
@@ -65,6 +66,7 @@ const scenes = [
         character: "caligola parla.PNG",
 
         horse: true
+        horseImage: "incitatus felice.PNG"
     },
 
     {
